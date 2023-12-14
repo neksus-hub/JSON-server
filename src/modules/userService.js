@@ -1,12 +1,27 @@
 export class UserService {
-  _users = [];
+  _users = [
+    {
+      id: 0,
+      name: "Mark",
+      email: "otto@gmail.com",
+      chield: true,
+      permissions: false,
+    },
+    {
+      id: 1,
+      name: "Jacob",
+      email: "thornton@gmail.com",
+      chield: false,
+      permissions: true,
+    },
+  ];
 
-  getUsers() {
+  get users() {
     return this._users;
   }
 
-  setUsers(users) {
-    this.users = users;
+  set users(users) {
+    this._users = users;
   }
 
   logger() {

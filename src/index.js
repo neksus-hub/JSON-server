@@ -1,6 +1,6 @@
-import { first } from "./modules/first";
+import { render } from "./modules/render";
 import { UserService } from "./modules/userService";
 
-const userSevice = new UserService();
+window.userService = new UserService();
 
-first(userSevice);
+render(userService.user);
