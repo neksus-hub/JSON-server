@@ -1,3 +1,3 @@
-export const first = () => {
- console.log('first');
-}
+export const first = (service) => {
+  service.logger();
+};

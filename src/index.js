@@ -1,3 +1,6 @@
 import { first } from "./modules/first";
+import { UserService } from "./modules/userService";
 
-first()
+const userSevice = new UserService();
+
+first(userSevice);
