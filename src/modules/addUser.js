@@ -1,3 +1,5 @@
+"use strict";
+
 import { render } from "./render";
 
 export const addUser = () => {
@@ -6,8 +8,8 @@ export const addUser = () => {
   const inputEmail = form.querySelector("#form-email");
   const childInput = form.querySelector("#form-children");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
     const user = {
       name: inputName.value,
@@ -17,9 +19,7 @@ export const addUser = () => {
     };
 
     userService.addUser(user).then(() => {
-      userService.getUser().then((users) => {
-        render(users);
-      });
+      userService.getUser().then((users) => render(users));
     });
   });
 };

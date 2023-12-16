@@ -1,3 +1,5 @@
+"use strict";
+
 export const render = (users) => {
   const tbody = document.getElementById("table-body");
 
