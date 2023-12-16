@@ -4,7 +4,7 @@
       "name": "Никита",
       "email": "nik@mail.ru",
       "children": true,
-      "permissions": false,
+      "permissions": true,
       "id": 1
     },
     {
@@ -13,6 +13,13 @@
       "children": false,
       "permissions": false,
       "id": 2
+    },
+    {
+      "name": "Толя",
+      "email": "tolya@test.ru",
+      "children": true,
+      "permissions": false,
+      "id": 3
     }
   ]
 }

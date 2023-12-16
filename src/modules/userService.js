@@ -52,4 +52,16 @@ export class UserService {
       (res) => res.json()
     );
   }
+
+  getSortUsers(sortOption) {
+    return fetch(
+      `http://localhost:4545/users?_sort=${sortOption.name}&_order=${sortOption.value}`
+    ).then((res) => res.json());
+  }
+
+  getSearchUsers(str) {
+    return fetch(`http://localhost:4545/users?name_like=${str}`).then((res) =>
+      res.json()
+    );
+  }
 }

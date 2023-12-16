@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userService */ \"./src/modules/userService.js\");\n/* harmony import */ var _modules_addUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addUser */ \"./src/modules/addUser.js\");\n/* harmony import */ var _modules_removeUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/removeUser */ \"./src/modules/removeUser.js\");\n/* harmony import */ var _modules_changePermissions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/changePermissions */ \"./src/modules/changePermissions.js\");\n/* harmony import */ var _modules_editUser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/editUser */ \"./src/modules/editUser.js\");\n/* harmony import */ var _modules_filterUsers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/filterUsers */ \"./src/modules/filterUsers.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nwindow.userService = new _modules_userService__WEBPACK_IMPORTED_MODULE_1__.UserService();\r\n\r\nuserService.getUser().then((data) => (0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data));\r\n\r\n(0,_modules_addUser__WEBPACK_IMPORTED_MODULE_2__.addUser)();\r\n(0,_modules_removeUser__WEBPACK_IMPORTED_MODULE_3__.removeUser)();\r\n(0,_modules_changePermissions__WEBPACK_IMPORTED_MODULE_4__.changePermissions)();\r\n(0,_modules_editUser__WEBPACK_IMPORTED_MODULE_5__.editUser)();\r\n(0,_modules_filterUsers__WEBPACK_IMPORTED_MODULE_6__.filterUsers)();\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _modules_userService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userService */ \"./src/modules/userService.js\");\n/* harmony import */ var _modules_addUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addUser */ \"./src/modules/addUser.js\");\n/* harmony import */ var _modules_removeUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/removeUser */ \"./src/modules/removeUser.js\");\n/* harmony import */ var _modules_changePermissions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/changePermissions */ \"./src/modules/changePermissions.js\");\n/* harmony import */ var _modules_editUser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/editUser */ \"./src/modules/editUser.js\");\n/* harmony import */ var _modules_filterUsers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/filterUsers */ \"./src/modules/filterUsers.js\");\n/* harmony import */ var _modules_sortUsers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/sortUsers */ \"./src/modules/sortUsers.js\");\n/* harmony import */ var _modules_searchUsers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/searchUsers */ \"./src/modules/searchUsers.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nwindow.userService = new _modules_userService__WEBPACK_IMPORTED_MODULE_1__.UserService();\r\n\r\nuserService.getUser().then((data) => (0,_modules_render__WEBPACK_IMPORTED_MODULE_0__.render)(data));\r\n\r\n(0,_modules_addUser__WEBPACK_IMPORTED_MODULE_2__.addUser)();\r\n(0,_modules_removeUser__WEBPACK_IMPORTED_MODULE_3__.removeUser)();\r\n(0,_modules_changePermissions__WEBPACK_IMPORTED_MODULE_4__.changePermissions)();\r\n(0,_modules_editUser__WEBPACK_IMPORTED_MODULE_5__.editUser)();\r\n(0,_modules_filterUsers__WEBPACK_IMPORTED_MODULE_6__.filterUsers)();\r\n(0,_modules_sortUsers__WEBPACK_IMPORTED_MODULE_7__.sortUsers)();\r\n(0,_modules_searchUsers__WEBPACK_IMPORTED_MODULE_8__.searchUsers)();\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/index.js?");
 
 /***/ }),
 
@@ -60,6 +60,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/helper.js":
+/*!*******************************!*\
+  !*** ./src/modules/helper.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   debounce: () => (/* binding */ debounce)\n/* harmony export */ });\nconst debounce = (func, ms = 300) => {\r\n  let timer;\r\n\r\n  return (...args) => {\r\n    clearTimeout(timer);\r\n\r\n    timer = setTimeout(() => {\r\n      func.apply(undefined, args);\r\n    }, ms);\r\n  };\r\n};\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/helper.js?");
+
+/***/ }),
+
 /***/ "./src/modules/removeUser.js":
 /*!***********************************!*\
   !*** ./src/modules/removeUser.js ***!
@@ -80,13 +90,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/searchUsers.js":
+/*!************************************!*\
+  !*** ./src/modules/searchUsers.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   searchUsers: () => (/* binding */ searchUsers)\n/* harmony export */ });\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./render */ \"./src/modules/render.js\");\n/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helper */ \"./src/modules/helper.js\");\n\r\n\r\n\r\nconst searchUsers = () => {\r\n  const searchInput = document.getElementById(\"search-input\");\r\n\r\n  const debounceSearch = (0,_helper__WEBPACK_IMPORTED_MODULE_1__.debounce)(() => {\r\n    userService.getSearchUsers(searchInput.value).then((users) => {\r\n      (0,_render__WEBPACK_IMPORTED_MODULE_0__.render)(users);\r\n    });\r\n  });\r\n\r\n  searchInput.addEventListener(\"input\", () => {\r\n    debounceSearch();\r\n  });\r\n};\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/searchUsers.js?");
+
+/***/ }),
+
+/***/ "./src/modules/sortUsers.js":
+/*!**********************************!*\
+  !*** ./src/modules/sortUsers.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sortUsers: () => (/* binding */ sortUsers)\n/* harmony export */ });\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./render */ \"./src/modules/render.js\");\n\r\n\r\nconst sortUsers = () => {\r\n  const sortIsChildrenHeader = document.getElementById(\"sort-is-children\");\r\n\r\n  let isSort = false;\r\n\r\n  sortIsChildrenHeader.style.cursor = \"pointer\";\r\n\r\n  sortIsChildrenHeader.addEventListener(\"click\", () => {\r\n    userService\r\n      .getSortUsers({\r\n        name: \"children\",\r\n        value: isSort ? \"asc\" : \"desc\",\r\n      })\r\n      .then((users) => {\r\n        (0,_render__WEBPACK_IMPORTED_MODULE_0__.render)(users);\r\n      });\r\n\r\n    isSort = !isSort;\r\n  });\r\n};\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/sortUsers.js?");
+
+/***/ }),
+
 /***/ "./src/modules/userService.js":
 /*!************************************!*\
   !*** ./src/modules/userService.js ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   UserService: () => (/* binding */ UserService)\n/* harmony export */ });\n\r\n\r\nclass UserService {\r\n  getUser() {\r\n    return fetch(\"http://localhost:4545/users\")\r\n      .then((response) => response.json())\r\n      .catch((error) => console.log(error));\r\n  }\r\n\r\n  addUser(user) {\r\n    return fetch(\"http://localhost:4545/users\", {\r\n      method: \"POST\",\r\n      headers: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n      body: JSON.stringify(user),\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  removeUser(id) {\r\n    return fetch(`http://localhost:4545/users/${id}`, {\r\n      method: \"DELETE\",\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  changeUser(id, data) {\r\n    return fetch(`http://localhost:4545/users/${id}`, {\r\n      method: \"PATCH\",\r\n      body: JSON.stringify(data),\r\n      headers: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  getMutableUser(id) {\r\n    return fetch(`http://localhost:4545/users/${id}`).then((res) => res.json());\r\n  }\r\n\r\n  editUser(id, user) {\r\n    return fetch(`http://localhost:4545/users/${id}`, {\r\n      method: \"PUT\",\r\n      body: JSON.stringify(user),\r\n      headers: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  filterUsers(filterOption) {\r\n    return fetch(`http://localhost:4545/users?${filterOption}=true`).then(\r\n      (res) => res.json()\r\n    );\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/userService.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   UserService: () => (/* binding */ UserService)\n/* harmony export */ });\n\r\n\r\nclass UserService {\r\n  getUser() {\r\n    return fetch(\"http://localhost:4545/users\")\r\n      .then((response) => response.json())\r\n      .catch((error) => console.log(error));\r\n  }\r\n\r\n  addUser(user) {\r\n    return fetch(\"http://localhost:4545/users\", {\r\n      method: \"POST\",\r\n      headers: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n      body: JSON.stringify(user),\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  removeUser(id) {\r\n    return fetch(`http://localhost:4545/users/${id}`, {\r\n      method: \"DELETE\",\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  changeUser(id, data) {\r\n    return fetch(`http://localhost:4545/users/${id}`, {\r\n      method: \"PATCH\",\r\n      body: JSON.stringify(data),\r\n      headers: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  getMutableUser(id) {\r\n    return fetch(`http://localhost:4545/users/${id}`).then((res) => res.json());\r\n  }\r\n\r\n  editUser(id, user) {\r\n    return fetch(`http://localhost:4545/users/${id}`, {\r\n      method: \"PUT\",\r\n      body: JSON.stringify(user),\r\n      headers: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n    }).then((res) => res.json());\r\n  }\r\n\r\n  filterUsers(filterOption) {\r\n    return fetch(`http://localhost:4545/users?${filterOption}=true`).then(\r\n      (res) => res.json()\r\n    );\r\n  }\r\n\r\n  getSortUsers(sortOption) {\r\n    return fetch(\r\n      `http://localhost:4545/users?_sort=${sortOption.name}&_order=${sortOption.value}`\r\n    ).then((res) => res.json());\r\n  }\r\n\r\n  getSearchUsers(str) {\r\n    return fetch(`http://localhost:4545/users?name_like=${str}`).then((res) =>\r\n      res.json()\r\n    );\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack://json-sever__lesson/./src/modules/userService.js?");
 
 /***/ })
 
