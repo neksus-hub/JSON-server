@@ -1,11 +1,12 @@
 export const render = (users) => {
   const tbody = document.getElementById("table-body");
 
+  tbody.innerHTML = "";
+
   users.forEach((user) => {
     tbody.insertAdjacentHTML(
       "beforeend",
-      `<tr>
-       <tr>
+      `<tr data-key=${user.id}>
        <th scope="row">${user.id}</th>
        <td>${user.name}</td>
        <td>${user.email}</td>
@@ -30,7 +31,7 @@ export const render = (users) => {
            <button type="button" class="btn btn-warning">
              <i class="bi-pencil-square"></i>
            </button>
-           <button type="button" class="btn btn-danger">
+           <button type="button" class="btn btn-danger btn-remove">
              <i class="bi-person-x"></i>
            </button>
          </div>

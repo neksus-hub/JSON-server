@@ -14,4 +14,10 @@ export class UserService {
       body: JSON.stringify(user),
     });
   }
+
+  removeUser(id) {
+    return fetch(`http://localhost:3000/users/${id}`, {
+      method: "DELETE",
+    }).then((res) => res.json());
+  }
 }
