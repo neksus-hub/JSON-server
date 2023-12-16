@@ -11,15 +11,20 @@ export const addUser = () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const user = {
-      name: inputName.value,
-      email: inputEmail.value,
-      children: childInput.checked,
-      permissions: false,
-    };
+    if (!form.dataset.method) {
+      const user = {
+        name: inputName.value,
+        email: inputEmail.value,
+        children: childInput.checked,
+        permissions: false,
+      };
 
-    userService.addUser(user).then(() => {
-      userService.getUser().then((users) => render(users));
-    });
+      userService.addUser(user).then(() => {
+        userService.getUser().then((users) => {
+          render(users);
+          form.reset();
+        });
+      });
+    }
   });
 };

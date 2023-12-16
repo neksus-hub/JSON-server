@@ -32,4 +32,24 @@ export class UserService {
       },
     }).then((res) => res.json());
   }
+
+  getMutableUser(id) {
+    return fetch(`http://localhost:4545/users/${id}`).then((res) => res.json());
+  }
+
+  editUser(id, user) {
+    return fetch(`http://localhost:4545/users/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
+  }
+
+  filterUsers(filterOption) {
+    return fetch(`http://localhost:4545/users?${filterOption}=true`).then(
+      (res) => res.json()
+    );
+  }
 }

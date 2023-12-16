@@ -1,3 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "Никита",
+      "email": "nik@mail.ru",
+      "children": true,
+      "permissions": false,
+      "id": 1
+    },
+    {
+      "name": "Никита",
+      "email": "nik@mail.ru",
+      "children": false,
+      "permissions": false,
+      "id": 2
+    }
+  ]
 }

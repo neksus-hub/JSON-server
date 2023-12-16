@@ -6,6 +6,7 @@ import { addUser } from "./modules/addUser";
 import { removeUser } from "./modules/removeUser";
 import { changePermissions } from "./modules/changePermissions";
 import { editUser } from "./modules/editUser";
+import { filterUsers } from "./modules/filterUsers";
 
 window.userService = new UserService();
 
@@ -15,3 +16,4 @@ addUser();
 removeUser();
 changePermissions();
 editUser();
+filterUsers();
