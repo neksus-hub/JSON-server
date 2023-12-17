@@ -1,67 +1,77 @@
 "use strict";
 
 export class UserService {
+  getData(url) {
+    return fetch(url)
+      .then((res) => res.json())
+      .catch(() => {
+        const table = document.querySelector(".table");
+        const error = document.createElement("p");
+
+        error.style.color = "red";
+        error.textContent = "Произошла ошибка, данных нет!";
+        table.append(error);
+
+        console.log("Данных нет!");
+      });
+  }
+
+  sendData(url, method, data) {
+    return fetch(url, {
+      method: `${method}`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .catch(() => {
+        const table = document.querySelector(".table");
+        const error = document.createElement("p");
+
+        error.style.color = "red";
+        error.textContent = "Запрос на сервер не отправлен";
+        table.append(error);
+
+        console.log("Запрос не отправлен");
+      });
+  }
+
   getUser() {
-    return fetch("http://localhost:4545/users")
-      .then((response) => response.json())
-      .catch((error) => console.log(error));
+    return this.getData("http://localhost:4545/users");
   }
 
   addUser(user) {
-    return fetch("http://localhost:4545/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    }).then((res) => res.json());
+    return this.sendData("http://localhost:4545/users", "POST", user);
   }
 
   removeUser(id) {
-    return fetch(`http://localhost:4545/users/${id}`, {
-      method: "DELETE",
-    }).then((res) => res.json());
+    return this.sendData(`http://localhost:4545/users/${id}`, "DELETE");
   }
 
   changeUser(id, data) {
-    return fetch(`http://localhost:4545/users/${id}`, {
-      method: "PATCH",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => res.json());
+    return this.sendData(`http://localhost:4545/users/${id}`, "PATCH", data);
   }
 
   getMutableUser(id) {
-    return fetch(`http://localhost:4545/users/${id}`).then((res) => res.json());
+    return this.getData(`http://localhost:4545/users/${id}`);
   }
 
   editUser(id, user) {
-    return fetch(`http://localhost:4545/users/${id}`, {
-      method: "PUT",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => res.json());
+    return this.sendData(`http://localhost:4545/users/${id}`, "PUT", user);
   }
 
   filterUsers(filterOption) {
-    return fetch(`http://localhost:4545/users?${filterOption}=true`).then(
-      (res) => res.json()
-    );
+    return this.getData(`http://localhost:4545/users?${filterOption}=true`);
   }
 
   getSortUsers(sortOption) {
-    return fetch(
+    return this.getData(
       `http://localhost:4545/users?_sort=${sortOption.name}&_order=${sortOption.value}`
-    ).then((res) => res.json());
+    );
   }
 
   getSearchUsers(str) {
-    return fetch(`http://localhost:4545/users?name_like=${str}`).then((res) =>
-      res.json()
-    );
+    return this.getData(`http://localhost:4545/users?name_like=${str}`);
   }
 }

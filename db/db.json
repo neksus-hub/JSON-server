@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "name": "Никита",
+      "name": "Никита5",
       "email": "nik@mail.ru",
       "children": true,
-      "permissions": true,
+      "permissions": false,
       "id": 1
     },
     {
@@ -20,6 +20,48 @@
       "children": true,
       "permissions": false,
       "id": 3
+    },
+    {
+      "name": "Никита",
+      "email": "nik@mail.ru",
+      "children": false,
+      "permissions": false,
+      "id": 4
+    },
+    {
+      "name": "Никита",
+      "email": "nik@mail.ru",
+      "children": false,
+      "permissions": false,
+      "id": 5
+    },
+    {
+      "name": "Николай",
+      "email": "nik@mail.ru",
+      "children": true,
+      "permissions": false,
+      "id": 6
+    },
+    {
+      "name": "Никита",
+      "email": "nik@mail.ru",
+      "children": false,
+      "permissions": false,
+      "id": 7
+    },
+    {
+      "name": "Иван",
+      "email": "vanya@test.ru",
+      "children": true,
+      "permissions": false,
+      "id": 8
+    },
+    {
+      "name": "Никита",
+      "email": "nik@mail.ru",
+      "children": true,
+      "permissions": false,
+      "id": 9
     }
   ]
 }
